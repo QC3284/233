@@ -1,13 +1,10 @@
-name: debugger-action
-on:
-  push:
-    branches:
-      - test
+name: CI
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup tmate session
-      - uses: mxschmitt/action-tmate@v3
-        timeout-minutes: 9999999999999999999999999999999
+    - uses: actions/checkout@v3
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
+      timeout-minutes: 1440
