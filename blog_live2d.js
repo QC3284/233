@@ -4,12 +4,12 @@
     const live2dConfig = {
         path: {
             homePath: '/',
-            modelPath: 'https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/Resources/',
-            cssPath: 'https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/waifu.css',
-            tipsJsonPath: 'https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/waifu-tips.json',
-            tipsJsPath: 'https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/waifu-tips.js',
-            live2dCorePath: 'https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/Core/live2dcubismcore.js',
-            live2dSdkPath: 'https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main/live2d-sdk.js'
+            modelPath: 'https://jsd.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@main/Resources/',
+            cssPath: 'https://jsd.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@main/waifu.css',
+            tipsJsonPath: 'https://jsd.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@main/waifu-tips.json',
+            tipsJsPath: 'https://jsd.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@main/waifu-tips.js',
+            live2dCorePath: 'https://jsd.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@main/Core/live2dcubismcore.js',
+            live2dSdkPath: 'https://jsd.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@main/live2d-sdk.js'
         },
         tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
         drag: { enable: true, direction: ["x", "y"] },
