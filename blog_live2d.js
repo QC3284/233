@@ -4,7 +4,7 @@
     const live2dConfig = {
         path: {
             homePath: '/',
-            modelPath: 'https://jsd.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@main/Resources/',
+            modelPath: 'https://jsd.xcqcoo.top/gh/QC3284hugo-static-resource@main/live2d/live2d-moc3/',
             cssPath: 'https://jsd.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@main/waifu.css',
             tipsJsonPath: 'https://jsd.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@main/waifu-tips.json',
             tipsJsPath: 'https://jsd.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@main/waifu-tips.js',
