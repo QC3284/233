@@ -13,7 +13,7 @@
         },
         tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
         drag: { enable: true, direction: ["x", "y"] },
-        switchType: "order"
+        switchType: "random"
     };
 
     // 资源加载器
