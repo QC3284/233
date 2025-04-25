@@ -3,7 +3,7 @@
   with:
     mode: ngrok
   env:
-    # After sign up on the https://ngrok.com
+    # After sign up on th https://ngrok.com
     # You can find this token here: https://dashboard.ngrok.com/auth/your-authtoken
     NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
     
