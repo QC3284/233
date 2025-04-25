@@ -7,7 +7,7 @@
     # You can find this token here: https://dashboard.ngrok.com/auth/your-authtoken
     NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
     
-    # ngrok server region [us, eu, au, ap, sa, jp, in] (optional, default: us)
+    # ngrok server region [us, eu, au, ap, sa, jp, in] (optional, defult: us)
     # You can find this server region here: https://ngrok.com/docs#global-locations
     NGROK_REGION: us
 
