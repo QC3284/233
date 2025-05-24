@@ -4,12 +4,12 @@
     const live2dConfig = {
         path: {
             homePath: '/',
-            modelPath: 'https://cdn3.xcqcoo.top/gh/QC3284/hugo-static-resource@latest/live2d/live2d-moc3/',
-            cssPath: 'https://cdn3.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@latest/waifu.css',
-            tipsJsonPath: 'https://cdn3.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@latest/waifu-tips.json',
-            tipsJsPath: 'https://cdn3.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@latest/waifu-tips.js',
-            live2dCorePath: 'https://cdn3.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@latest/Core/live2dcubismcore.js',
-            live2dSdkPath: 'https://cdn3.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@latest/live2d-sdk.js'
+            modelPath: 'https://cdn2.xcqcoo.top/gh/QC3284/hugo-static-resource@latest/live2d/live2d-moc3/',
+            cssPath: 'https://cdn2.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@latest/waifu.css',
+            tipsJsonPath: 'https://cdn2.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@latest/waifu-tips.json',
+            tipsJsPath: 'https://cdn2.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@latest/waifu-tips.js',
+            live2dCorePath: 'https://cdn2.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@latest/Core/live2dcubismcore.js',
+            live2dSdkPath: 'https://cdn2.xcqcoo.top/gh/letere-gzj/live2d-widget-v3@latest/live2d-sdk.js'
         },
         tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
         drag: { enable: true, direction: ["x", "y"] },
