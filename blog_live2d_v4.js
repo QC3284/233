@@ -6,7 +6,7 @@
             homePath: '/',
             modelPath: 'https://cdn3.xcqcoo.top/jsd/gh/QC3284/hugo-static-resource@latest/live2d/live2d-moc3/',
             cssPath: 'https://cdn3.xcqcoo.top/jsd/gh/letere-gzj/live2d-widget-v3@latest/waifu.css',
-            tipsJsonPath: 'https://cdn3.xcqcoo.top/jsd/gh/letere-gzj/live2d-widget-v3@latest/waifu-tips.json',
+            tipsJsonPath: 'https://cdn3.xcqcoo.top/jsd/gh/QC3284/live2d-widget-v3@latest/waifu-tips.json',
             tipsJsPath: 'https://cdn3.xcqcoo.top/jsd/gh/letere-gzj/live2d-widget-v3@latest/waifu-tips.js',
             live2dCorePath: 'https://cdn3.xcqcoo.top/jsd/gh/letere-gzj/live2d-widget-v3@latest/Core/live2dcubismcore.js',
             live2dSdkPath: 'https://cdn3.xcqcoo.top/jsd/gh/letere-gzj/live2d-widget-v3@latest/live2d-sdk.js'
