@@ -16,20 +16,6 @@
         switchType: "order"
     };
 
-    // 提前设置路由变化处理函数
-    const handleRouteChange = () => {
-        // 移除事件监听器避免重复刷新
-        window.removeEventListener('hashchange', handleRouteChange);
-        window.removeEventListener('popstate', handleRouteChange);
-        
-        // 强制刷新页面
-        location.reload(true);
-    };
-    
-    // 立即监听路由变化事件
-    window.addEventListener('hashchange', handleRouteChange);
-    window.addEventListener('popstate', handleRouteChange);
-
     // 资源加载器
     const resourceLoader = (url, type) => {
         return new Promise((resolve, reject) => {
@@ -74,6 +60,39 @@
                     switchType: live2dConfig.switchType
                 });
             }
+
+            // 监听所有类型的路由变化
+            const handleRouteChange = () => {
+                // 移除所有事件监听器
+                window.removeEventListener('popstate', handleRouteChange);
+                window.removeEventListener('pushState', handleRouteChange);
+                window.removeEventListener('replaceState', handleRouteChange);
+                window.removeEventListener('hashchange', handleRouteChange);
+                
+                // 强制刷新页面
+                window.location.reload();
+            };
+            
+            // 监听标准路由事件
+            window.addEventListener('popstate', handleRouteChange);
+            window.addEventListener('hashchange', handleRouteChange);
+            
+            // 监听单页应用的路由变化
+            const originalPushState = history.pushState;
+            const originalReplaceState = history.replaceState;
+            
+            history.pushState = function() {
+                originalPushState.apply(this, arguments);
+                window.dispatchEvent(new Event('pushState'));
+            };
+            
+            history.replaceState = function() {
+                originalReplaceState.apply(this, arguments);
+                window.dispatchEvent(new Event('replaceState'));
+            };
+            
+            window.addEventListener('pushState', handleRouteChange);
+            window.addEventListener('replaceState', handleRouteChange);
         }).catch(console.error);
     };
 
