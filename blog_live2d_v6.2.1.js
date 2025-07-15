@@ -16,6 +16,20 @@
         switchType: "order"
     };
 
+    // 提前设置路由变化处理函数
+    const handleRouteChange = () => {
+        // 移除事件监听器避免重复刷新
+        window.removeEventListener('hashchange', handleRouteChange);
+        window.removeEventListener('popstate', handleRouteChange);
+        
+        // 强制刷新页面
+        location.reload(true);
+    };
+    
+    // 立即监听路由变化事件
+    window.addEventListener('hashchange', handleRouteChange);
+    window.addEventListener('popstate', handleRouteChange);
+
     // 资源加载器
     const resourceLoader = (url, type) => {
         return new Promise((resolve, reject) => {
@@ -60,20 +74,6 @@
                     switchType: live2dConfig.switchType
                 });
             }
-
-            // 添加路由变化监听器
-            const handleRouteChange = () => {
-                // 移除事件监听器避免重复刷新
-                window.removeEventListener('hashchange', handleRouteChange);
-                window.removeEventListener('popstate', handleRouteChange);
-                
-                // 强制刷新页面
-                location.reload(true);
-            };
-            
-            // 监听单页应用的路由变化
-            window.addEventListener('hashchange', handleRouteChange);
-            window.addEventListener('popstate', handleRouteChange);
         }).catch(console.error);
     };
 
