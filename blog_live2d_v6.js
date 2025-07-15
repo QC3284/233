@@ -33,6 +33,14 @@
     const initLive2D = () => {
         if (window.innerWidth < 768) return;
 
+        // 如果已经存在看板娘，先移除
+        const existingWaifu = document.querySelector('#waifu');
+        if (existingWaifu) existingWaifu.remove();
+        
+        // 移除旧的样式
+        const oldStyle = document.querySelector('#live2d-style');
+        if (oldStyle) oldStyle.remove();
+
         Promise.all([
             resourceLoader(live2dConfig.path.cssPath, 'css'),
             resourceLoader(live2dConfig.path.live2dCorePath, 'js'),
@@ -41,6 +49,7 @@
         ]).then(() => {
             // 添加z-index样式确保显示在最前面
             const style = document.createElement('style');
+            style.id = 'live2d-style';
             style.innerHTML = `
                 #waifu {
                     z-index: 10000 !important;
@@ -74,4 +83,44 @@
             initLive2D();
         }
     });
+
+    // 监听页面变化事件（针对单页应用）
+    let lastPath = window.location.pathname;
+    
+    // 监听路由变化（适用于单页应用）
+    const observeUrlChange = () => {
+        const observer = new MutationObserver(() => {
+            if (window.location.pathname !== lastPath) {
+                lastPath = window.location.pathname;
+                initLive2D();
+            }
+        });
+        
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    };
+    
+    // 监听 history API 变化
+    const wrapHistoryMethod = (method) => {
+        const orig = history[method];
+        return function() {
+            const result = orig.apply(this, arguments);
+            const event = new Event(method.toLowerCase());
+            event.arguments = arguments;
+            window.dispatchEvent(event);
+            return result;
+        };
+    };
+    
+    history.pushState = wrapHistoryMethod('pushState');
+    history.replaceState = wrapHistoryMethod('replaceState');
+    
+    window.addEventListener('pushstate', () => initLive2D());
+    window.addEventListener('replacestate', () => initLive2D());
+    window.addEventListener('popstate', () => initLive2D());
+    
+    // 开始监听URL变化
+    observeUrlChange();
 })();
