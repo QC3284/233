@@ -39,6 +39,15 @@
             resourceLoader(live2dConfig.path.live2dSdkPath, 'js'),
             resourceLoader(live2dConfig.path.tipsJsPath, 'js')
         ]).then(() => {
+            // 添加z-index样式确保显示在最前面
+            const style = document.createElement('style');
+            style.innerHTML = `
+                #waifu {
+                    z-index: 10000 !important;
+                }
+            `;
+            document.head.appendChild(style);
+            
             // 初始化函数来自 waifu-tips.js
             if (typeof initWidget === 'function') {
                 initWidget({
